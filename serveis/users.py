@@ -1,3 +1,4 @@
+
 from config.database import connection_db
 
 def inserirusuarios(nombre,cogno,correo,descripcion,curso,any,direccio,codgiP,password):
@@ -20,3 +21,7 @@ def selecionarUsuario(nombre,cognom,correo,curso,any,direccio):
     conn.close()
     cur.close()
     return devolverUsers
+
+
+
+
