@@ -32,4 +32,16 @@ def actualizar(ID,cognom,direccio):
     cur.close()
     return {"msg" : "Usuario actualizado correctamente"}
 
+#ejercicio 6
+def eliminarUsuario(id):
+    conn = connection_db()
+    cur = conn.cursor()
+    sqleliminar = "DELETE  FROM users WHERE user_id = %s"
+    cur.execute(sqleliminar(id,))
+    conn.commit()
+    conn.close()
+    cur.close()
+    return {"msg" : "Usuario eliminado correctamente"}
+
+
 
