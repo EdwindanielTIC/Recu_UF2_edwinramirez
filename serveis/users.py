@@ -1,8 +1,9 @@
+from config.database import connection_db
 
 def inserirusuarios(nombre,cogno,correo,descripcion,curso,any,direccio,codgiP,password):
     conn = connection_db()
     cur = conn.cursor()
-    sql = "INSET INTO users (nombre,cogno,correo,descripcion,curso,any,direccio,codgiP,password) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    sql = "INSERT INTO users (nombre,cogno,correo,descripcion,curso,any,direccio,codgiP,password) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     values = (nombre,cogno,correo,descripcion,curso,any,direccio,codgiP,password)
     cur.execute(sql,(values))
     conn.commit()
@@ -21,5 +22,14 @@ def selecionarUsuario(nombre,cognom,correo,curso,any,direccio):
     return devolverUsers
 
 
+def actualizar(ID,cognom,direccio):
+    conn = connection_db()
+    cur = conn.cursor()
+    sqlactualizar = "UPDATE users SET cognom = %s, direccio = %s WHERE user_id = %s "
+    cur.execute(sqlactualizar,(cognom,direccio,ID))
+    conn.commit()
+    conn.close()
+    cur.close()
+    return {"msg" : "Usuario actualizado correctamente"}
 
 
