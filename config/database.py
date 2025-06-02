@@ -10,5 +10,5 @@ def connection_db():
         port = "5432"
     )
 
-    print("Connexió establerta correctament")
+    print("Connexió establerta")
     return conn
