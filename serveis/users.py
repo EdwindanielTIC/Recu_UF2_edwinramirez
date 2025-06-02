@@ -33,7 +33,6 @@ def actualizar(ID,cognom,direccio):
     return {"msg" : "Usuario actualizado correctamente"}
 
 #ejercicio 6
-
 def eliminarUsuario(id):
     conn = connection_db()
     cur = conn.cursor()
