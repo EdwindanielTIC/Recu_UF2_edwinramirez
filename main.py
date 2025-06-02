@@ -24,3 +24,9 @@ async def actualizarUser(id,cognom ,direcció):
     dadesActualizar = query.actualizar(id,cognom,direcció)
     return dadesActualizar
 
+##ejercicio6
+
+@app.delete("/EliminarUser", response_model=dict)
+async def eliminarUsuario(iduser):
+    usereliminar = query.eliminarUsuario(iduser)
+    return usereliminar
